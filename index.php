@@ -1,0 +1,104 @@
+<?php get_header(); ?>
+<div id="content" class="narrowcolumn">
+  <?php if (have_posts()) : ?>
+  <?php $post = $posts[0];  ?>
+  <?php if (is_category()) { ?>
+  <h2 class="pagetitle">&#8216;
+    <?php single_cat_title(); ?>
+    &#8217;
+    <?php _e('category archive','minyx2Lite')?>
+  </h2>
+  <?php  } elseif (is_day()) { ?>
+  <h2 class="pagetitle">
+    <?php _e('Archive for','minyx2Lite')?>
+    <?php the_time('F jS, Y'); ?>
+  </h2>
+  <?php  } elseif (is_month()) { ?>
+  <h2 class="pagetitle">
+    <?php _e('Archive for','minyx2Lite')?>
+    <?php the_time('F, Y'); ?>
+  </h2>
+  <?php } elseif (is_year()) { ?>
+  <h2 class="pagetitle">
+    <?php _e('Archive for','minyx2Lite')?>
+    <?php the_time('Y'); ?>
+  </h2>
+  <?php  } elseif (is_search()) { ?>
+  <h2 class="pagetitle">
+    <?php _e('Search results for','minyx2Lite')?>
+    &#8216;&#8216;<?php echo($s); ?> &#8217;&#8217; </h2>
+  <?php } ?>
+  <script type="text/javascript">
+		$("#loading div").animate({width:"40%"});
+</script>
+  <?php while (have_posts()) : the_post(); ?>
+
+  <div class="post" id="post-<?php the_ID(); ?>">
+    <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent Link to','minyx2Lite')?> <?php the_title(); ?>">
+      <?php the_title(); ?>
+      </a></h2>
+    <?php if(!is_page()) {  ?>
+    <small>
+    <?php if(function_exists('the_views')) { the_views(); } ?>
+    <?php the_time('F d, y') ?>
+    <?php _e('by','minyx2Lite')?>
+    <?php the_author() ?>
+    <?php edit_post_link('edit', ' - ', '  '); ?>
+    </small>
+	
+	
+	<!--<?php if(is_single()) : ?>
+	baidu union
+	<iframe id="baiduSpFrame" border="0" vspace="0" hspace="0" marginwidth="0" marginheight="0" framespacing="0" frameborder="0" scrolling="no" width="640" height="60" src="http://spcode.baidu.com/spcode/spstyle/style1894.jsp?tn=yexiaozhou2003_sp&ctn=0&styleid=1894"></iframe>
+	<?php endif; ?> -->
+	
+    <?php }  ?>
+    <?php if(!is_search()) :  ?>
+    <div class="entry">
+      <?php the_content(__('Read More')); ?>
+    </div>
+    <?php endif;  ?>
+    <?php if(!is_page()) {  ?>
+    <?php if(is_single()) : ?>
+    	<br/>
+    	<br/>
+
+    <?php wp_related_posts(); ?>
+
+    <?php else :  ?>
+    <ul class="postmetadata">
+      <li class="icon_comment icon_r">
+        <?php comments_popup_link(__('No Comments','minyx2Lite'),__('1 Comment','minyx2Lite'),__('% Comments','minyx2Lite')); ?>
+      </li>
+      <li class="icon_cat"><strong>
+        <?php _e('Posted in','minyx2Lite')?>
+        </strong>
+        <?php the_category(', ') ?>
+      </li>
+    </ul>
+    <?php endif; ?>
+    <?php }  ?>
+  </div>
+  <?php if(is_single()) :   ?>
+  <?php comments_template(); ?>
+  <?php endif;  ?>
+  <?php endwhile; ?>
+  <script type="text/javascript">
+		$("#loading div").animate({width:"60%"});
+  </script>
+  <?php if(is_single() || is_page() ) :  ?>
+  <?php else: ?>
+
+    <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+    <br/>
+  <?php endif;  ?>
+  <?php else : ?>
+  <?php include (TEMPLATEPATH . '/notfound.php');?>
+  <?php endif; ?>
+</div>
+<?php get_sidebar(); ?>
+<script type="text/javascript">
+		$("#loading div").animate({width:"80%"});
+</script>
+<div class="clear"></div>
+<?php get_footer(); ?>
