@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+
+<?php include (TEMPLATEPATH . '/utility.php');?>
+
 <div id="content" class="narrowcolumn">
   <?php if (have_posts()) : ?>
   <?php $post = $posts[0];  ?>
@@ -47,11 +50,6 @@
     </small>
 	
 	
-	<!--<?php if(is_single()) : ?>
-	baidu union
-	<iframe id="baiduSpFrame" border="0" vspace="0" hspace="0" marginwidth="0" marginheight="0" framespacing="0" frameborder="0" scrolling="no" width="640" height="60" src="http://spcode.baidu.com/spcode/spstyle/style1894.jsp?tn=yexiaozhou2003_sp&ctn=0&styleid=1894"></iframe>
-	<?php endif; ?> -->
-	
     <?php }  ?>
     <?php if(!is_search()) :  ?>
     <div class="entry">
@@ -88,8 +86,9 @@
   </script>
   <?php if(is_single() || is_page() ) :  ?>
   <?php else: ?>
-
-    <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+  <div>
+    <?php if(function_exists('pagenavi')) { pagenavi(); } ?>
+   </div>
     <br/>
   <?php endif;  ?>
   <?php else : ?>

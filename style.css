@@ -829,3 +829,8 @@ width:32px;
 #custom_smiles img{
 border: 0 none;
 }
+
+.page-navi-numbers{line-height:16px;margin:0;padding:3px 5px;text-decoration:none;background:#fff;border-top:2px solid #fff;}
+.page-navi-numbers:hover{border-top:2px solid #ff00a4;}
+.page-navi-current-page,.page-navi-current-page:hover{color:#fff;background:#45b9f6;border-top:2px solid #45b9f6;}
+.page-navi-current-page:hover{border-top:2px solid #00679d;}
