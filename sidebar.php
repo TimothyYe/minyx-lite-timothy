@@ -3,7 +3,7 @@
   <div id="about">
     <div>
       <h2>
-        <div>Tips</div>
+        <div>关于本站</div>
       </h2>
 
       <p>
@@ -64,7 +64,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=zh-Hans"></script>
 
   		   
-    <!--Twitter Sidebar-->
+    <!--Weibo Sidebar-->
    <div>
   <iframe id="sina_widget_1401699537" style="width:100%; height:350px;" frameborder="0" scrolling="no" src="http://v.t.sina.com.cn/widget/widget_blog.php?uid=1401699537&height=350&skin=wd_01&showpic=1"></iframe>
   </div>
@@ -74,7 +74,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
    <div>
     <div>
       <h2>
-        Recent Comments
+        最近评论
       </h2>
     	<div>
 			<?php get_recent_comments(); ?>
@@ -90,7 +90,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
     <?php _e('RSS2.0 Entries','minyx2Lite')?>
     </a>
     <h2>
-      <?php _e('Recent Post','minyx2Lite')?>
+      <?php _e('最近日志','minyx2Lite')?>
     </h2>
     <ul>
       <?php wp_get_archives('type=postbypost&limit=5&format=html'); ?>
@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
    <div>
     <div>
       <h2>
-        Tags Cloud
+        标签云
       </h2>
     	<div align="center">
 			<?php wp_cumulus_insert(); ?>
@@ -137,7 +137,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   </div>
   <div class="sideL">
     <ul>
-      <?php wp_list_categories('show_count=1&title_li=<h2>Categories</h2>'); ?>
+      <?php wp_list_categories('show_count=1&title_li=<h2>文章分类</h2>'); ?>
       <li>
        <!--
          <h2>
