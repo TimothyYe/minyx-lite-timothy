@@ -70,15 +70,15 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   </div>
   		
    <!--recent comments-->
-   <?php if (function_exists('get_recent_comments')) { ?>
+   <?php if (function_exists('recent_comments')) { ?>
    <div>
     <div>
       <h2>
         最近评论
       </h2>
-    	<div>
-			<?php get_recent_comments(); ?>
-    	</div>
+    	<ul class="recentcomments">
+			<?php recent_comments(); ?>
+    	</ul>
     	<br/>
     </div>
   </div>
