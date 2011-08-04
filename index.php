@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<?php include (TEMPLATEPATH . '/utility.php');?>
-
 <div id="content" class="narrowcolumn">
   <?php if (have_posts()) : ?>
   <?php $post = $posts[0];  ?>
@@ -59,9 +57,12 @@
     <?php if(!is_page()) {  ?>
     <?php if(is_single()) : ?>
     	<br/>
-    	<br/>
+		
+		<h3>你可能也对下列文章感兴趣</h3>
+<ul>
+<?php related_posts(); ?>
+</ul>
 
-    <?php wp_related_posts(); ?>
 
     <?php else :  ?>
     <ul class="postmetadata">
