@@ -62,7 +62,12 @@ if (is_home()) {
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php wp_head(); ?>
-	
+
+<?php if ( is_singular() ){ /* 只在单个页面加载 */ ?>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/thickbox/thickbox.css">
+	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/thickbox/thickbox-compressed.js"></script>
+<?php } ?>
+
 <!--Google Analysis-->	
 <script type="text/javascript">
 
