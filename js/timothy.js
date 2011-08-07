@@ -69,4 +69,12 @@ jQuery(document).ready(function($){
         }
     } ,100 );});
     
+	
+	/* 用 jQuery 为每张图片链接自动加上 class="thickbox" */
+$('#content p a').each(function(){ //根据主题内容区的 id 设置选择器
+var a_href = $(this).attr('href').toLowerCase();
+var file_type = a_href.substring(a_href.lastIndexOf('.'));
+if (file_type == '.jpg' || file_type == '.png' || file_type == '.gif'){$(this).addClass('thickbox')};
+});
+
 });
