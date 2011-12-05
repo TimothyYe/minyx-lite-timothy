@@ -18,57 +18,18 @@
 		 <!-- you can edit this -->
     </div>
   </div>
-
- <!--google ad-->
- <div align="center">
-<script type="text/javascript"><!--
-google_ad_client = "pub-2308560106736257";
-/* sidebar-250x250, 创建于 10-7-2 */
-google_ad_slot = "3175129389";
-google_ad_width = 250;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-  </div>
-  
-   <!--baidu union ad-->
- <div align="center">
-  <script type="text/javascript"> /*250*250，创建于2010-8-24 xiaozhou.net - sidebar*/ var cpro_id = 'u166249';</script>
-<script type="text/javascript" src="http://cpro.baidu.com/cpro/ui/c.js"></script>
- </div>
-	 
+ 
   <!--Search Form-->
-  <!--<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+  <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
     <div>
       <input type="image" src="<?php bloginfo('stylesheet_directory');?>/pix/btnsearch.gif" id="searchsubmit"  />
       <label>
       <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" />
       </label>
     </div>
-  </form>-->
+  </form>
   
-  
-<form action="http://www.google.com/cse" id="cse-search-box" target="_blank">
-  <div>
-    <input type="hidden" name="cx" value="partner-pub-2308560106736257:k159ut-jbxr" />
-    <input type="hidden" name="ie" value="UTF-8" />
-	<label>
-    <input type="text" name="q" size="20" id="s" />
-	</label>
-    <input type="submit" name="sa" value="&#x641c;&#x7d22;" id="searchsubmit" />
-  </div>
-</form>
-<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=zh-Hans"></script>
-
-  		   
-    <!--Weibo Sidebar-->
-   <div>
-  <iframe id="sina_widget_1401699537" style="width:100%; height:350px;" frameborder="0" scrolling="no" src="http://v.t.sina.com.cn/widget/widget_blog.php?uid=1401699537&height=350&skin=wd_01&showpic=1"></iframe>
-  </div>
-  		
+    		     		
    <!--recent comments-->
    <?php if (function_exists('recent_comments')) { ?>
    <div>
@@ -115,7 +76,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       <li>
       <?php wp_list_bookmarks(); ?>
       </li>
-      <!--
+      
       <li class="archives">
         <h2>
           <?php _e('Archives','minyx2Lite')?>
@@ -131,7 +92,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
         </h2>
         <?php get_theme_switcher(); ?>
       </li>
-      <?php } ?> -->
+      <?php } ?>
       
     </ul>
   </div>
