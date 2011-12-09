@@ -294,6 +294,11 @@ div.post div.entry{
 	font: 14px/180% "微软雅黑","Microsoft YaHei", "宋体", "Segoe UI", Tahoma, Arial;
 	letter-spacing:normal;
 	}		
+	
+div.post div.entry p{
+	margin-bottom:20px;
+	}
+	
 div.post div.entry a img{
 	border-style:solid;
 	border-width:1px;
