@@ -7,15 +7,76 @@
       </h2>
 
       <p>
-      	<div>本站基于<a href="http://www.linode.com/?r=ac16f810d6f6c2b64d9f4cd6f9d08634db3d7b5c" target="_blank">Linode VPS</a>构建,由Ubuntu强力驱动</div></br>
+      	<div>本站基于<a href="http://www.xiaozhou.net/go/linode" target="_blank">Linode VPS</a>构建,由CentOS强力驱动</div></br>
 		<div>本站提供Linode与BurstNET的VPS代购服务，欢迎访问<a href="http://idigital.taobao.com" target="_blank">数字时代淘宝店</a></div></br>
     	<div><strong><font color="red">手机访问: </font></strong><a href="http://m.xiaozhou.net" target="_blank">http://m.xiaozhou.net</a> </br>
     <br/>
-    <br>此Blog中的文章和随笔仅代表作者在某一特定时间内的观点和结论，对其完全的正确不做任何担保或假设。</br>
-    <br>本站作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/cn/">&#30693;&#35782;&#20849;&#20139;&#32626;&#21517;-&#30456;&#21516;&#26041;&#24335;&#20849;&#20139; 2.5 &#20013;&#22269;&#22823;&#38470;&#35768;&#21487;&#21327;&#35758;</a>&#36827;&#34892;&#35768;&#21487;&#12290;</br>
+    <br>此Blog中的文章和随笔仅代表作者在某一特定时间内的观点和结论，对其完全的正确不做任何担保或假设</br>
+    <br>本站作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/cn/">知识共享署名-相同方式共享 2.5 中国大陆许可协议</a>进行许可。</br>
     	</div>
       </p>
 		 <!-- you can edit this -->
+    </div>
+  </div>
+  
+   <div id="about">
+    <div>
+      <h2>
+        <div>LINKS</div>
+      </h2>
+
+      <p>
+	  <?php
+	function alivv_ad_helper($url)
+	{
+		$content = '';
+		$done=false;
+		if (ini_get('allow_url_fopen') == '1') {
+			if ($fp = @fopen($url, 'r')) {
+				while ($line = @fread($fp, 1024)) {
+					$content .= $line;
+					$done=true;
+				}
+			}
+		}
+		 if (!$done) {
+			$parsedUrl = parse_url($url);
+			$host = $parsedUrl['host'];
+			if (isset($parsedUrl['path'])) {
+				$path = $parsedUrl['path'];
+			}
+			$timeout = 10;
+			$fp = @fsockopen($host, '80', $errno, $errstr, $timeout );
+			 if( !$fp ) {
+			 } else {
+				@fputs($fp, "GET $path HTTP/1.0
+" ."Host: $host
+
+"); 
+				while ( $line = @fread( $fp, 4096 ) ) { 
+					$content .= $line;
+					}
+				@fclose( $fp );
+				 $pos = strpos($content, "
+
+");
+				$content = substr($content, $pos + 4);
+				}
+			}
+			return $content;
+		}
+		function alivv_ad($url) {
+			$content=alivv_ad_helper($url);
+			 $content=str_replace("Bad Request (Invalid Hostname)","",$content);
+			$content=str_replace("Service Unavailable","",$content);
+			if (!preg_match('/\<Error/',$content)) {
+				echo $content;
+				//echo  iconv("UTF-8","GBK",$content);
+			 }
+		 }
+	echo alivv_ad('http://links.alivv.com/getcode.aspx?wid=r7ECTUtvAv4=&type=1');
+?>
+      </p>
     </div>
   </div>
 
@@ -34,11 +95,11 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
   </div>
   
-   <!--baidu union ad-->
+   <!--baidu union ad
  <div align="center">
   <script type="text/javascript"> /*250*250，创建于2010-8-24 xiaozhou.net - sidebar*/ var cpro_id = 'u166249';</script>
 <script type="text/javascript" src="http://cpro.baidu.com/cpro/ui/c.js"></script>
- </div>
+ </div>-->
 	 
   <!--Search Form-->
   <!--<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
@@ -56,7 +117,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
     <input type="hidden" name="cx" value="partner-pub-2308560106736257:k159ut-jbxr" />
     <input type="hidden" name="ie" value="UTF-8" />
 	<label>
-    <input type="text" name="q" size="20" id="s" />
+    <input type="text" x-webkit-speech name="q" size="20" id="s" />
 	</label>
     <input type="submit" name="sa" value="&#x641c;&#x7d22;" id="searchsubmit" />
   </div>
