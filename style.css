@@ -358,6 +358,41 @@ div.post div.entry code{
 	font-size:11px;
 	}
 
+div.post div.entry .announce{
+background-attachment: initial;
+background-clip: initial;
+background-color: #F2F1F0;
+background-image: initial;
+background-origin: initial;
+background-position: initial initial;
+background-repeat: initial initial;
+border-bottom-color: #BFBEBE;
+border-bottom-style: dashed;
+border-bottom-width: 1px;
+border-image: initial;
+
+border-left-color: #BFBEBE;
+border-left-style: dashed;
+border-left-width: 1px;
+
+border-right-color: #BFBEBE;
+border-right-style: dashed;
+border-right-width: 1px;
+
+border-top-color: #BFBEBE;
+border-top-style: dashed;
+border-top-width: 1px;
+
+clear: both;
+line-height: 16px;
+
+margin-bottom: 20px;
+padding-bottom: 5px;
+padding-left: 5px;
+padding-right: 5px;
+padding-top: 5px;
+
+}
 		
 div.post ul.postmetadata li{
 	display:inline;

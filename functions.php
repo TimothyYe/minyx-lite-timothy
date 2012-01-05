@@ -97,4 +97,18 @@ echo $rc_comments;
 	}
 }
 
+//Auto add copyright info at the end of articles
+function insertFootNote($content) {
+	if(is_single() || is_feed()) { //如果不想feed输出就去掉“|| is_feed()”
+		$wzbt = get_the_title();
+		$wzlj = get_permalink($post->ID);
+		$content.= '<p class="announce">';
+		$content.= '<span style="font-weight:bold;text-shadow:0 1px 0 #ddd;">声明:</span> 本文采用 <a rel="nofollow" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" title="署名-非商业性使用-相同方式共享">知识共享署名-相同方式共享3.0</a> 协议进行授权';
+		$content.= '<br />除非注明，本站文章均为原创，转载请注明转自  <a href="'.home_url().'">'.get_bloginfo('name').'</a> 并应以链接形式标明本文地址!';
+		$content.= '</p>';
+	}
+	return $content;
+}
+add_filter ('the_content', 'insertFootNote');
+
 ?>
