@@ -56,8 +56,7 @@
     <?php endif;  ?>
     <?php if(!is_page()) {  ?>
     <?php if(is_single()) : ?>
-    	<br/>
-		<br/>
+    
 		<h3>你可能也对下列文章感兴趣</h3>
 <ul>
 <?php related_posts(); ?>
