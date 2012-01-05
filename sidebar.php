@@ -7,12 +7,9 @@
       </h2>
 
       <p>
-      	<div>本站基于<a href="http://www.xiaozhou.net/go/linode" target="_blank">Linode VPS</a>构建,由CentOS强力驱动</div></br>
-		<div>本站提供Linode与BurstNET的VPS代购服务，欢迎访问<a href="http://idigital.taobao.com" target="_blank">数字时代淘宝店</a></div></br>
-    	<div><strong><font color="red">手机访问: </font></strong><a href="http://m.xiaozhou.net" target="_blank">http://m.xiaozhou.net</a> </br>
-    <br/>
-    <br>此Blog中的文章和随笔仅代表作者在某一特定时间内的观点和结论，对其完全的正确不做任何担保或假设</br>
-    <br>本站作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/cn/">知识共享署名-相同方式共享 2.5 中国大陆许可协议</a>进行许可。</br>
+      	<div>本站基于<a href="http://www.xiaozhou.net/go/linode" target="_blank">Linode VPS</a>构建,由CentOS强力驱动</div><br/>
+		<div>本站提供Linode与BurstNET的VPS代购服务，欢迎访问<a href="http://idigital.taobao.com" target="_blank">数字时代淘宝店</a></div><br/>
+    	<div><strong><font color="red">手机访问: </font></strong><a href="http://m.xiaozhou.net" target="_blank">http://m.xiaozhou.net</a> <br/>
     	</div>
       </p>
 		 <!-- you can edit this -->
