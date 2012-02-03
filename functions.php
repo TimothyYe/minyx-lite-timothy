@@ -46,6 +46,8 @@ if ( $posttags ) {
 		$exclude_id .= ',' . $post->ID; $i ++;
 	} wp_reset_query();
 }
+
+/*
 if ( $i < $post_num ) { // 當 tags 文章數量不足, 再取 category 補足.
 	$cats = ''; foreach ( get_the_category() as $cat ) $cats .= $cat->cat_ID . ',';
 	$args = array(
@@ -60,7 +62,8 @@ if ( $i < $post_num ) { // 當 tags 文章數量不足, 再取 category 補足.
 		<li><a rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 	<?php $i++;
 	} wp_reset_query();
-}
+} */
+
 if ( $i  == 0 )  echo '<li>没有相关文章!</li>';
 }
 }
