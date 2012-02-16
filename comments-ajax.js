@@ -92,6 +92,7 @@ $('#commentform').submit(function(){															//id='commentform' submit時�
 
 		beforeSend: function(){																	//提交時的動作
 				$('#commenterror').hide();																//隱藏:錯誤提示
+				$('#bottom_ad').hide();
 				$('#commentload').slideDown();														//拉下顯示:正在提交
 				},
 
@@ -104,6 +105,7 @@ $('#commentform').submit(function(){															//id='commentform' submit時�
 		success: function(data){																//成功時的動作
 				$('textarea').each(function(){this.value=''});						//清空: textarea 《使用 $('#comment').val(''); 也可以, 但有些模板不動作》
 				$('#commentload').hide();																	//隱藏:正在提交
+				$('#bottom_ad').show('slow');
 		var t = addComment, /*cancel = t.I('cancel-comment-reply-link'),*/ //評論框 & 取消回覆鏈接定義
 				temp = t.I('wp-temp-form-div'), respond = t.I(t.respondId),//評論框的臨時節點定義
 				post = t.I('comment_post_ID').value, parent = t.I('comment_parent').value,//傳回父層值
@@ -131,8 +133,8 @@ $('#commentform').submit(function(){															//id='commentform' submit時�
 				countdown();																							//(倒計時函式在最下面)
 				num++ ;																										//編號累進, 目的是不讓 id 重覆
 
-		//cancel.style.display = 'none';																//隱藏:取消回覆	-------------- 評論框回底層
-		//cancel.onclick = null;																				//清空:回覆鏈接
+		cancel.style.display = 'none';																//隱藏:取消回覆	-------------- 評論框回底層
+		cancel.onclick = null;																				//清空:回覆鏈接
 		t.I('comment_parent').value = '0';														//回底層
 if ( temp && respond ){																						//如果有節點和回覆框
 		temp.parentNode.insertBefore(respond, temp);									//temp 節點前加評論框
@@ -147,6 +149,7 @@ addComment = {																		//回覆時的動作, 以下參考 wp-includes\j
 		var t = this, div, comm = t.I(commId), respond = t.I(respondId), /*cancel = t.I('cancel-comment-reply-link'),*/ parent = t.I('comment_parent'), post = t.I('comment_post_ID');
 
 		$('#commenterror').hide();																		//隱藏:錯誤提示
+		$('#bottom_ad').hide();
 
 		t.respondId = respondId;
 		postId = postId || false;
@@ -162,8 +165,8 @@ addComment = {																		//回覆時的動作, 以下參考 wp-includes\j
 			comm.parentNode.insertBefore(respond, comm.nextSibling);
 			post.value = postId;
 			parent.value = parentId;
-			//cancel.style.display = '';
-/*
+			cancel.style.display = '';
+
 		cancel.onclick = function() {														//取消回覆時的動作
 			var t = addComment, temp = t.I('wp-temp-form-div'), respond = t.I(t.respondId);
 
@@ -176,7 +179,7 @@ addComment = {																		//回覆時的動作, 以下參考 wp-includes\j
 			temp.parentNode.insertBefore(respond, temp);
 			temp.parentNode.removeChild(temp)}
 			return false;
-		};*/
+		};
 		try { t.I('comment').focus(); }
 		catch(e) {}
 		return false;

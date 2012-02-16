@@ -533,13 +533,50 @@ ol.commentlist li span.moderate{
 	padding:4px 4px 4px 30px;
 	width:230px;}
 
+#custom_smiles{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
 
+#custom_smiles img{
+border: 0 none;
+}
+
+#bottom_ad {
+float: right;
+background-color: #F2F1F0;
+background-origin: initial;
+background-position: initial initial;
+background-repeat: initial initial;
+border-bottom-color: #BFBEBE;
+border-bottom-style: dashed;
+border-bottom-width: 1px;
+border-image: initial;
+
+border-left-color: #BFBEBE;
+border-left-style: dashed;
+border-left-width: 1px;
+
+border-right-color: #BFBEBE;
+border-right-style: dashed;
+border-right-width: 1px;
+
+border-top-color: #BFBEBE;
+border-top-style: dashed;
+border-top-width: 1px;
+}
+
+#customed_comment_form{
+	padding-bottom: 5px;
+}
 #commentform input#author	{background-position:3px -3px;}
 #commentform input#email	{background-position:3px -33px;}
 #commentform input#url		{background-position:3px -63px;}
 	
 #commentform #comment{
-	width:99%;
+	float: left;
+	width: 70%;
+	height: 200px;
 	font: 12px/18px "微软雅黑","Microsoft YaHei", "宋体", "Segoe UI", Tahoma, Arial;
 	background-color:#FFF;
 	background: url("pix/comment.png") no-repeat scroll center center #FFFFFF;
@@ -864,10 +901,6 @@ width:32px;
 cursor:pointer;
 height:32px;
 width:32px;
-}
-
-#custom_smiles img{
-border: 0 none;
 }
 
 .page-navi-numbers{line-height:16px;margin:0;padding:3px 5px;text-decoration:none;background:#fff;border-top:2px solid #fff;}

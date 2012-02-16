@@ -26,10 +26,7 @@
 <span class="closecomment">
 <?php _e('Comments are closed','minyx2Lite')?>
 </span>
-<?php else : ?>
-<a href="#respond" class="addcomment">
-<?php _e('Add your comment','minyx2Lite')?>
-</a>
+
 <?php endif; ?>
 
  <!--<h3 id="comments">
@@ -156,8 +153,16 @@
     您已输入<span id="str">0</span>字
     </span>
       </div>
-
-    <textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea>
+      
+<div id="customed_comment_form">
+  
+    <textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4" width=""></textarea>
+ 
+    <div id="bottom_ad">
+    <!--Baidu AD-->
+    <script type="text/javascript">/*200*200，bottom 创建于2012-2-16*/ var cpro_id = 'u771049';</script><script src="http://cpro.baidu.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+</div>
   </p>
   <p>
 	<input align="center" name="submit" type="image" src="<?php bloginfo('stylesheet_directory'); ?>/pix/btncomment.gif" id="submit" tabindex="5" value="<?php _e('Submit Comment','minyx2Lite')?>" /><span>(Ctrl+Enter)</span>
