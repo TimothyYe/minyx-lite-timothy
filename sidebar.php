@@ -24,55 +24,57 @@
 
       <p>
 	  <?php
-	function alivv_ad_helper($url)
-	{
-		$content = '';
-		$done=false;
-		if (ini_get('allow_url_fopen') == '1') {
-			if ($fp = @fopen($url, 'r')) {
-				while ($line = @fread($fp, 1024)) {
-					$content .= $line;
-					$done=true;
-				}
-			}
-		}
-		 if (!$done) {
-			$parsedUrl = parse_url($url);
-			$host = $parsedUrl['host'];
-			if (isset($parsedUrl['path'])) {
-				$path = $parsedUrl['path'];
-			}
-			$timeout = 10;
-			$fp = @fsockopen($host, '80', $errno, $errstr, $timeout );
-			 if( !$fp ) {
-			 } else {
-				@fputs($fp, "GET $path HTTP/1.0
+	
+  function alivv_ad_helper($url)
+  {
+    $content = '';
+    $done=false;
+    if (ini_get('allow_url_fopen') == '1') {
+      if ($fp = @fopen($url, 'r')) {
+        while ($line = @fread($fp, 1024)) {
+          $content .= $line;
+          $done=true;
+        }
+      }
+    }
+     if (!$done) {
+      $parsedUrl = parse_url($url);
+      $host = $parsedUrl['host'];
+      if (isset($parsedUrl['path'])) {
+        $path = $parsedUrl['path'];
+      }
+      $timeout = 10;
+      $fp = @fsockopen($host, '80', $errno, $errstr, $timeout );
+       if( !$fp ) {
+       } else {
+        @fputs($fp, "GET $path HTTP/1.0
 " ."Host: $host
 
 "); 
-				while ( $line = @fread( $fp, 4096 ) ) { 
-					$content .= $line;
-					}
-				@fclose( $fp );
-				 $pos = strpos($content, "
+        while ( $line = @fread( $fp, 4096 ) ) { 
+          $content .= $line;
+          }
+        @fclose( $fp );
+         $pos = strpos($content, "
 
 ");
-				$content = substr($content, $pos + 4);
-				}
-			}
-			return $content;
-		}
-		function alivv_ad($url) {
-			$content=alivv_ad_helper($url);
-			 $content=str_replace("Bad Request (Invalid Hostname)","",$content);
-			$content=str_replace("Service Unavailable","",$content);
-			if (!preg_match('/\<Error/',$content)) {
-				echo $content;
-				//echo  iconv("UTF-8","GBK",$content);
-			 }
-		 }
-	echo alivv_ad('http://links.alivv.com/getcode.aspx?wid=r7ECTUtvAv4=&type=1');
-?>
+        $content = substr($content, $pos + 4);
+        }
+      }
+      return $content;
+    }
+    function alivv_ad($url) {
+      $content=alivv_ad_helper($url);
+       $content=str_replace("Bad Request (Invalid Hostname)","",$content);
+      $content=str_replace("Service Unavailable","",$content);
+      if (!preg_match('/\<Error/',$content)) {
+        echo urldecode($content);
+        //echo iconv("UTF-8","gbk",urldecode($content));
+       }
+     }
+  echo alivv_ad('http://links.alivv.com/getcode.aspx?code=1&wid=r7ECTUtvAv4=&type=3');
+
+    ?>
       </p>
     </div>
   </div>
