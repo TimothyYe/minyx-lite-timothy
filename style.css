@@ -50,7 +50,7 @@ div#container{
 div#wrapper {
 	width:100%;
 	overflow:auto;
-	margin:15px 0px;
+	padding:15px 0px;
 	}
 
 div#content{
@@ -58,11 +58,6 @@ div#content{
 	width:700px;
 	float:left;
 	margin-right:10px;
-	}
-div#sidebar{
-overflow:hidden;
-width:280px;
-float:right;
 	}
 	
 div .clear
@@ -597,45 +592,48 @@ border-top-width: 1px;
 ///////////////// SIDEBARS ////////////////
 /////////////////////////////////////////*/
 
-div#sidebar{
-	color:#666;
-	font-size:12px;
-	}
+#sidebar{
+overflow:hidden;
+width:280px;
+float:right;
+color:#666;
+font-size:12px;
+}
 
-div#sidebar a:link,
-div#sidebar a:visited{
+#sidebar a:link,
+#sidebar a:visited{
 	color:#0066CC;
 	}
 
-div#sidebar a:hover{
+#sidebar a:hover{
 	color:#FF3300;
 	}	
 
-div#sidebar a img{border:none;}	
+#sidebar a img{border:none;}	
 	
-div#sidebar h2{
+#sidebar h2{
 	font-size:12px;
 	color:#333;
 	text-align:center;
 	border-bottom:3px solid #DDD;
 	}
 
-div#sidebar div.floatL{
+#sidebar div.floatL{
 	float:left;
 	width:193px;
 	}		
-div#sidebar div.sideR{
+#sidebar div.sideR{
 	float:right;
 	width:48%;
 	}	
 
-div#sidebar div.sideL{
+#sidebar div.sideL{
 	float:left;
 	width:48%;
 	}
 	
-div#sidebar div.sideL h2,
-div#sidebar div.sideR h2	{
+#sidebar div.sideL h2,
+#sidebar div.sideR h2	{
 	background-color:#47505F;
 	border-bottom:2px solid #2F353F;
 	color:#FFF;
@@ -647,57 +645,57 @@ div#sidebar div.sideR h2	{
 
 	/*about*/
 
-div#sidebar div#about h2{
+#sidebar div#about h2{
 	border-color:#dcd6b3;
 	}	
-div#sidebar div#about{
+#sidebar div#about{
 	background-color:#F8F8EE;
 	border:1px solid #EEE;
 	}		
 
-div#sidebar div#about img.photo{
+#sidebar div#about img.photo{
 	float:left;
 	margin:10px;
 	}
-div#sidebar div#about a{font-weight:bold; text-decoration:underline;}
-div#sidebar div#about a:link,
-div#sidebar div#about a:visited{color:#FFA300;}		
-div#sidebar div#about a:hover{color:#333;}
-div#sidebar div#about div{
+#sidebar div#about a{font-weight:bold; text-decoration:underline;}
+#sidebar div#about a:link,
+#sidebar div#about a:visited{color:#FFA300;}		
+#sidebar div#about a:hover{color:#333;}
+#sidebar div#about div{
 	border:1px solid #FFF;
 	padding:5px;
 	}	
 	
-div#sidebar ul li a{
+#sidebar ul li a{
 	background-image:url(pix/icon_bullet.gif);
 	}
 	
 	
 	/*RECENT*/
-div#sidebar div#recent{
+#sidebar div#recent{
 	background-image:url(pix/recentBg.gif);
 	background-position:0px 22px;
 	background-repeat:repeat-x;
 	}
-div#sidebar div#recent ul li{
+#sidebar div#recent ul li{
 	border-bottom:1px solid #EEE;
 	padding:2px 0px;
 	}
-div#sidebar div#recent ul li a{
+#sidebar div#recent ul li a{
 	background-repeat:no-repeat;
 	padding:3px 0px 3px 20px;
 	}
 
-div#sidebar div#recent ul li a:link,
-div#sidebar div#recent ul li a:visited{
+#sidebar div#recent ul li a:link,
+#sidebar div#recent ul li a:visited{
 	background-position:0px 0px;
 	}
 
-div#sidebar div#recent ul li a:hover{
+#sidebar div#recent ul li a:hover{
 	background-position:0px -80px;
 	}		
 
-div#sidebar  div#recent a.mini_rss{
+#sidebar  div#recent a.mini_rss{
 	float:right;
 	text-indent:-9000em;
 	width:20px;
@@ -705,59 +703,59 @@ div#sidebar  div#recent a.mini_rss{
 	display:block;
 	background-image:url(pix/icon_rss.gif);
 	}
-div#sidebar div#recent a.mini_rss:link,
-div#sidebar div#recent a.mini_rss:visited{
+#sidebar div#recent a.mini_rss:link,
+#sidebar div#recent a.mini_rss:visited{
 	background-position:0 0;
 	}
-div#sidebar div#recent a.mini_rss:hover{
+#sidebar div#recent a.mini_rss:hover{
 	background-position:0 -20px;
 	}	
 
 
 /* general*/
 
-div#sidebar ul li ul li{
+#sidebar ul li ul li{
 	border-bottom:1px solid #EEE;
 	padding:3px 0px;
 	}	
 
-div#sidebar ul li ul li a{
+#sidebar ul li ul li a{
 	background-repeat:no-repeat;
 	padding:0 0 0 20px;
 	}
 
-div#sidebar ul li ul li a:link,
-div#sidebar ul li ul li a:visited{
+#sidebar ul li ul li a:link,
+#sidebar ul li ul li a:visited{
 	background-position:0px -4px;
 	}
 
-div#sidebar ul li ul li a:hover{
+#sidebar ul li ul li a:hover{
 	background-position:0px -84px;
 	}			
 	
 	
 	/*CATS*/
 	
-div#sidebar ul li.categories a{
+#sidebar ul li.categories a{
 	background-image:url(pix/icon_folder.gif);
 	}	
-div#sidebar ul li.categories ul li ul li{
+#sidebar ul li.categories ul li ul li{
 	border:none;
 	}	
 	
-div#sidebar ul li.categories ul li ul li a{
+#sidebar ul li.categories ul li ul li a{
 	background-image:url(pix/icon_child.gif);
 	}	
 
 	/*LINKS*/
 
-div#sidebar ul li.linkcat a{
+#sidebar ul li.linkcat a{
 	background-image:url(pix/icon_link.gif);
 	}	
 	
 	/*ARCHIVES*/
 
-div#sidebar ul li.archives a{
+#sidebar ul li.archives a{
 	background-image:url(pix/icon_date.gif);
 	}
 	
