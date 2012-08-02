@@ -263,6 +263,41 @@ ul#menu li#rss a:visited{
 	background:#d54e21;
 }
 
+#page_ad{
+background-attachment: initial;
+background-clip: initial;
+background-color: #FFFFFF;
+display: block;
+background-origin: initial;
+background-position: initial initial;
+background-repeat: initial initial;
+border-bottom-color: #BFBEBE;
+border-bottom-style: dashed;
+border-bottom-width: 1px;
+
+border-left-color: #BFBEBE;
+border-left-style: dashed;
+border-left-width: 1px;
+
+border-right-color: #BFBEBE;
+border-right-style: dashed;
+border-right-width: 1px;
+
+border-top-color: #BFBEBE;
+border-top-style: dashed;
+border-top-width: 1px;
+
+clear: both;
+line-height: 16px;
+
+margin-top: 5px;
+margin-bottom: 5px;
+margin-left: 62px;
+padding: 0px;
+
+width: 576px;
+height: 71px;
+}
 
 /*/////////////////////////////////////////
 ///////////// POST FORMATING  /////////////

@@ -49,7 +49,19 @@
 	
 	
     <?php }  ?>
-    <?php if(!is_search()) :  ?>
+    <?php if(!is_search()) :  
+	if(is_single())
+	{ ?>
+	<div id="page_ad">
+	<a href="http://www.xiaozhou.net/go/linode" target="blank" title="现在就开始体验高性能的Linode VPS!" rel="nofollow">
+	<img src="http://www.xiaozhou.net/wp-content/themes/minyx-20-lite/pix/linode_banner.jpg" alt="现在就开始体验高性能的Linode VPS!" />
+	</a>
+	</div>
+	<?php
+	}
+	?>
+	
+	
     <div class="entry">
       <?php the_content(__('Read More')); ?>
     </div>
